@@ -17,7 +17,7 @@ local config = wezterm.config_builder()
 local git_bash = { "C:\\Program Files\\Git\\bin\\bash.exe", "--login", "-i" }
 local cmd_exe = { "C:\\WINDOWS\\system32\\cmd.exe" }
 local wsl_def = { "wsl.exe", "--cd", "~" }
-local wsl_bash = { "wsl.exe", "--cd", "~", "-e", "/bin/bash" }
+local wsl_bash = { "wsl.exe", "--cd", "~", "-e", "/bin/bash", "-i", "-l" }
 
 config.default_prog = git_bash
 
