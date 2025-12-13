@@ -15,6 +15,8 @@ local config = wezterm.config_builder()
 
 -- Our favorite shell
 local git_bash = { "C:\\Program Files\\Git\\bin\\bash.exe", "--login", "-i" }
+local cmd_exe = { "C:\\WINDOWS\\system32\\cmd.exe" }
+local wsl_def = { "wsl.exe", "--cd", "~" }
 
 config.default_prog = git_bash
 
@@ -24,16 +26,32 @@ config.launch_menu = {
     label = "Git Bash",
     args = git_bash
   },
-
+  {
+    label = "WSL (default)",
+    args = wsl_def
+  },
   {
     label = "cmd.exe",
-    args = { "C:\\WINDOWS\\system32\\cmd.exe" },
+    args = cmd_exe
   },
 }
 
 
--- Allow ctrl+v to paste
-config.keys = {{ key = 'v', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },}
+-- TODO: to disable all default key bindings
+-- config.disable_default_key_bindings = true
+
+
+-- Set up some key bindings
+config.keys = {
+  { key = '1', mods = 'ALT', action = act.ActivateTab(0) },
+  { key = '2', mods = 'ALT', action = act.ActivateTab(1) },
+
+  { key = 's', mods = 'ALT', action = act.SpawnCommandInNewTab { args = git_bash } },
+  { key = 'q', mods = 'ALT', action = act.SpawnCommandInNewTab { args = wsl_def } },
+  { key = 'w', mods = 'ALT', action = act.SpawnCommandInNewTab { args = cmd_exe } },
+
+  { key = 'v', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
+}
 
 
 -- Start off with a larger window
