@@ -17,6 +17,7 @@ local config = wezterm.config_builder()
 local git_bash = { "C:\\Program Files\\Git\\bin\\bash.exe", "--login", "-i" }
 local cmd_exe = { "C:\\WINDOWS\\system32\\cmd.exe" }
 local wsl_def = { "wsl.exe", "--cd", "~" }
+local wsl_bash = { "wsl.exe", "--cd", "~", "-e", "/bin/bash" }
 
 config.default_prog = git_bash
 
@@ -27,8 +28,12 @@ config.launch_menu = {
     args = git_bash
   },
   {
-    label = "WSL (default)",
+    label = "WSL (default, zsh)",
     args = wsl_def
+  },
+  {
+    label = "WSL (default, bash)",
+    args = wsl_bash
   },
   {
     label = "cmd.exe",
@@ -57,8 +62,11 @@ config.keys = {
   -- new (t)ab - default shell
   { key = 't', mods = 'ALT', action = act.SpawnCommandInNewTab { args = git_bash, cwd = wezterm.home_dir } },
 
-  -- new (w)sl tab
+  -- new (w)sl tab, using zsh
   { key = 'w', mods = 'ALT', action = act.SpawnCommandInNewTab { args = wsl_def } },
+
+  -- new (w)sl tab, using zsh
+  { key = 'b', mods = 'ALT', action = act.SpawnCommandInNewTab { args = wsl_bash } },
 
   -- new (d)os tab
   { key = 'd', mods = 'ALT', action = act.SpawnCommandInNewTab { args = cmd_exe } },

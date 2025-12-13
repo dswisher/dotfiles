@@ -1,0 +1,13 @@
+
+echo "...running .profile..."
+
+# Set some variables
+export EDITOR="vim"
+
+# If this is bash, load up bashrc, too
+if [ "$BASH" ]; then
+    . ~/.bashrc
+fi
+
+# Tell neovim we're in a shell script
+# vim:ft=sh
