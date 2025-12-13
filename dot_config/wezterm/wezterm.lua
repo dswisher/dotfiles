@@ -45,11 +45,25 @@ config.launch_menu = {
 config.keys = {
   { key = '1', mods = 'ALT', action = act.ActivateTab(0) },
   { key = '2', mods = 'ALT', action = act.ActivateTab(1) },
+  { key = '3', mods = 'ALT', action = act.ActivateTab(2) },
+  { key = '4', mods = 'ALT', action = act.ActivateTab(3) },
+  { key = '5', mods = 'ALT', action = act.ActivateTab(4) },
+  { key = '6', mods = 'ALT', action = act.ActivateTab(5) },
+  { key = '7', mods = 'ALT', action = act.ActivateTab(6) },
+  { key = '8', mods = 'ALT', action = act.ActivateTab(7) },
+  { key = '9', mods = 'ALT', action = act.ActivateTab(8) },
 
-  { key = 's', mods = 'ALT', action = act.SpawnCommandInNewTab { args = git_bash } },
-  { key = 'q', mods = 'ALT', action = act.SpawnCommandInNewTab { args = wsl_def } },
-  { key = 'w', mods = 'ALT', action = act.SpawnCommandInNewTab { args = cmd_exe } },
+  -- TODO: on non-windows, use zsh!
+  -- new (t)ab - default shell
+  { key = 't', mods = 'ALT', action = act.SpawnCommandInNewTab { args = git_bash, cwd = wezterm.home_dir } },
 
+  -- new (w)sl tab
+  { key = 'w', mods = 'ALT', action = act.SpawnCommandInNewTab { args = wsl_def } },
+
+  -- new (d)os tab
+  { key = 'd', mods = 'ALT', action = act.SpawnCommandInNewTab { args = cmd_exe } },
+
+  -- enable pasting with ctrl+v
   { key = 'v', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
 }
 
