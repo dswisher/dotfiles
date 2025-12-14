@@ -3,6 +3,16 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 
 
+-- OS detection
+-- local is_darwin = function()
+--     return wezterm.target_triple:find("darwin") ~= nil
+-- end
+
+local is_windows = function()
+    return wezterm.target_triple:find("windows") ~= nil
+end
+
+
 -- Set the window title
 wezterm.on('format-window-title', function(window)
   -- TODO: this could be dynamic
@@ -13,13 +23,19 @@ end)
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- Our favorite shell
+-- Our favorite shell(s)
 local git_bash = { "C:\\Program Files\\Git\\bin\\bash.exe", "--login", "-i" }
 local cmd_exe = { "C:\\WINDOWS\\system32\\cmd.exe" }
 local wsl_def = { "wsl.exe", "--cd", "~" }
 local wsl_bash = { "wsl.exe", "--cd", "~", "-e", "/bin/bash", "-i", "-l" }
+local zsh = { "/bin/zsh", "-i", "-l" }
 
-config.default_prog = git_bash
+if is_windows() then
+    config.default_prog = git_bash
+else
+    -- TODO - what if zsh does not exist?
+    config.default_prog = zsh
+end
 
 -- Launch menu
 config.launch_menu = {
@@ -60,7 +76,7 @@ config.keys = {
 
   -- TODO: on non-windows, use zsh!
   -- new (t)ab - default shell
-  { key = 't', mods = 'ALT', action = act.SpawnCommandInNewTab { args = git_bash, cwd = wezterm.home_dir } },
+  { key = 't', mods = 'ALT', action = act.SpawnCommandInNewTab { args = config.default_prog, cwd = wezterm.home_dir } },
 
   -- new (w)sl tab, using zsh
   { key = 'w', mods = 'ALT', action = act.SpawnCommandInNewTab { args = wsl_def } },
