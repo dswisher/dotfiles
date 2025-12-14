@@ -54,11 +54,8 @@ export PS1="git-bash> "
 # Set up zoxide - improved cd - uses "z" in the shell - see https://github.com/ajeetdsouza/zoxide
 # This should be near the end of the script
 if [[ -f /opt/homebrew/bin/zoxide || -f ~/.local/bin/zoxide || -f /usr/bin/zoxide ]]; then
-    echo "...setting up zoxide..."
     export _ZO_ECHO=1
     eval "$(zoxide init bash)"
-else
-    echo "--> zoxide not found!"
 fi
 
 

@@ -81,6 +81,11 @@ config.initial_cols = 160
 config.initial_rows = 40
 
 
+-- Disable ligatures (combining < and = into one character, for example)
+-- See https://wezterm.org/config/font-shaping.html
+config.harfbuzz_features = { 'calt=0' }
+
+
 -- Finally, return the configuration to wezterm:
 return config
 

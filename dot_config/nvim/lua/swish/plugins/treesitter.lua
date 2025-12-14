@@ -13,6 +13,7 @@ return {
         config = function()
             local treesitter = require("nvim-treesitter.configs")
 
+            -- On windows, need to force it to use the MSFT compiler
             if vim.loop.os_uname().sysname == "Windows_NT" then
                 require('nvim-treesitter.install').compilers = { "clang-cl" }
             end

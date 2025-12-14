@@ -10,8 +10,19 @@ vim.lsp.enable('terraform_ls')
 -- Configure diagnostics.
 vim.diagnostic.config({
     -- Show error messages below the line with the issue.
-    -- NOTE: it is possible to set this up so it only displays for the current line, if desired
-    virtual_lines = true
+    -- virtual_lines = true,
+     virtual_lines = {
+        current_line = true,
+    },
+
+    -- It is recommended to disable virtual_text to avoid conflicts
+    virtual_text = false,
+
+    -- Only show the virtual text for the current line; showing everything was too much.
+    -- Use the sign column to locate lines with issues.
+    -- virtual_text = {
+    --     current_line = true,
+    -- },
 })
 
 -- Use LspAttach autocommand to only map the following keys
@@ -19,19 +30,31 @@ vim.diagnostic.config({
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
-        local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = ev.buf, desc = 'LSP: ' .. desc })
-        end
+        -- local map = function(keys, func, desc)
+        --     vim.keymap.set('n', keys, func, { buffer = ev.buf, desc = 'LSP: ' .. desc })
+        -- end
 
         local tele = require("telescope.builtin")
 
+        -- TODO: what does this .buf.declaration mapping do, and how does it differ from lsp_definitions?
         -- map("gd", vim.lsp.buf.declaration, "go to declaration")
-        map('gd', tele.lsp_definitions, 'Goto Definition (via telescope)')
+        vim.keymap.set('n', 'gd', tele.lsp_definitions,
+            { buffer = ev.buf, desc = 'LSP: Goto Definition (via telescope)' })
 
-        map('<leader>fd', tele.diagnostics, 'Diagnostics (via telescope)')
-        map('<leader>fr', tele.lsp_references, 'Goto References (via telescope)')
-        map('<leader>fs', tele.lsp_document_symbols, 'Doc Symbols (via telescope)')
+        vim.keymap.set('n', '<leader>fd', tele.diagnostics,
+            { buffer = ev.buf, desc = 'LSP: Diagnostics (via telescope)' })
 
+        vim.keymap.set('n', '<leader>fr', tele.lsp_references,
+            { buffer = ev.buf, desc = 'LSP: Goto References (via telescope)' })
+
+        vim.keymap.set("n", "<leader>fs", function()
+            require("telescope.builtin").lsp_document_symbols({
+                symbols = {
+                    "Method",
+                    "Function",
+                }
+            })
+        end, { desc = "LSP: Doc Symbols (via telescope)" })
 
         -- map('<leader>fS', tele.lsp_dynamic_workspace_symbols, 'Dynamic Symbols')
         -- map('<leader>ft', tele.lsp_type_definitions, 'Goto Type')

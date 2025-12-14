@@ -13,7 +13,9 @@ return {
 
             -- TODO: these mappings are a work in progress, need to refine them
 
-            ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+            -- NOTE: I _want_ to use control+space, but that is not working on Windoze
+            -- ['<C-Space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+            ['<S-Tab>'] = { 'show', 'show_documentation', 'hide_documentation' },
 
             ['<C-e>'] = { 'hide', 'fallback' },
             ['<C-x>'] = { 'cancel', 'fallback' },
