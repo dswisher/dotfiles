@@ -1,0 +1,16 @@
+
+chezmoi: ~= 2.68.1
+curl
+eza
+fd
+fzf
+git
+less
+neovim: 0.11.5
+ripgrep
+tig
+uv: ~= 0.9.17
+
+# A fake package, for testing
+blue-monkey
+

@@ -6,7 +6,9 @@ The old repo, `dothome`, is being phased out.
 
 # Initializing a new machine
 
-First, [install chezmoi](https://www.chezmoi.io/install/).
+First, [install chezmoi](https://www.chezmoi.io/install/). This 1-liner often works (on linux-ish systems, anyway):
+
+    sh -c "$(curl -fsLS get.chezmoi.io)"
 
 Next, initialize it:
 

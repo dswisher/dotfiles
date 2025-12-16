@@ -4,9 +4,9 @@ local act = wezterm.action
 
 
 -- OS detection
--- local is_darwin = function()
---     return wezterm.target_triple:find("darwin") ~= nil
--- end
+local is_darwin = function()
+    return wezterm.target_triple:find("darwin") ~= nil
+end
 
 local is_windows = function()
     return wezterm.target_triple:find("windows") ~= nil
@@ -33,7 +33,7 @@ local zsh = { "/bin/zsh", "-i", "-l" }
 if is_windows() then
     config.default_prog = git_bash
 else
-    -- TODO - what if zsh does not exist?
+    -- TODO: what if zsh does not exist?
     config.default_prog = zsh
 end
 
@@ -74,7 +74,6 @@ config.keys = {
   { key = '8', mods = 'ALT', action = act.ActivateTab(7) },
   { key = '9', mods = 'ALT', action = act.ActivateTab(8) },
 
-  -- TODO: on non-windows, use zsh!
   -- new (t)ab - default shell
   { key = 't', mods = 'ALT', action = act.SpawnCommandInNewTab { args = config.default_prog, cwd = wezterm.home_dir } },
 
@@ -93,8 +92,23 @@ config.keys = {
 
 
 -- Start off with a larger window
-config.initial_cols = 160
-config.initial_rows = 40
+-- TODO: on Mac, at work with lower-res monitor, the window kept overflowing the screen at start, so I slimmed these down to help a bit
+config.initial_cols = 100
+config.initial_rows = 30
+
+
+-- Bump up the font size
+-- TODO: can we base this off screen resolution?
+if is_darwin() then
+    config.font_size = 16
+end
+
+
+-- Configure tabs
+config.tab_bar_at_bottom = true
+config.window_frame = {
+  font_size = 16.0,
+}
 
 
 -- Disable ligatures (combining < and = into one character, for example)
