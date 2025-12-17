@@ -51,6 +51,12 @@ export PROMPT_COMMAND='echo -ne "\033]0;git-bash\007"'
 export PS1="git-bash> "
 
 
+# If rust is installed, configure it
+if [ -f $HOME/.cargo/env ]; then
+    . "$HOME/.cargo/env"
+fi
+
+
 # Set up zoxide - improved cd - uses "z" in the shell - see https://github.com/ajeetdsouza/zoxide
 # This should be near the end of the script
 if [[ -f /opt/homebrew/bin/zoxide || -f ~/.local/bin/zoxide || -f /usr/bin/zoxide ]]; then
