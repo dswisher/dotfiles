@@ -5,10 +5,11 @@ eza
 fd
 fzf
 git
+lazygit
 less
 neovim: 0.11.5
 ripgrep
-tig
+# tig
 uv: ~= 0.9.17
 
 # A fake package, for testing

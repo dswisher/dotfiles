@@ -33,6 +33,7 @@ return {
                     "lua",
                     "markdown",
                     "python",
+                    "rust",
                     "sql",
                 },
 
