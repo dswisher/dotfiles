@@ -76,6 +76,7 @@ config.keys = {
 
   -- new (t)ab - default shell
   { key = 't', mods = 'ALT', action = act.SpawnCommandInNewTab { args = config.default_prog, cwd = wezterm.home_dir } },
+  { key = 't', mods = 'CMD', action = act.SpawnCommandInNewTab { args = config.default_prog, cwd = wezterm.home_dir } },
 
   -- new (w)sl tab, using zsh
   { key = 'w', mods = 'ALT', action = act.SpawnCommandInNewTab { args = wsl_def } },
@@ -88,6 +89,11 @@ config.keys = {
 
   -- enable pasting with ctrl+v
   { key = 'v', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
+
+  -- new window bindings
+  -- TODO: should I be setting the command, here?
+  { key = 'n', mods = 'CMD', action = act.SpawnCommandInNewWindow { cwd = wezterm.home_dir } },
+  { key = 'n', mods = 'SHIFT|CTRL', action = act.SpawnCommandInNewWindow { cwd = wezterm.home_dir } },
 }
 
 
