@@ -20,6 +20,12 @@ return {
                     },
                 },
             },
+
+            pickers = {
+                buffers = {
+                    sort_mru = true,
+                },
+            },
         })
 
         vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'telescope: buffers' })
