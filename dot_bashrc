@@ -31,6 +31,11 @@ shopt -s checkwinsize
 alias vi=nvim
 
 
+# If this is windows, set the config location
+# TODO: only set this on windows! (But it shouldn't hurt anywhere else)
+export XDG_CONFIG_HOME=$HOME/.config
+
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"

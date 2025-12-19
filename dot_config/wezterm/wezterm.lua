@@ -122,6 +122,20 @@ config.window_frame = {
 config.harfbuzz_features = { 'calt=0' }
 
 
+-- On Windows 2019, openGL is too old, so we need to use an alternate rendering scheme
+-- Only enable on Windows Server 2019 (build 17763), not on Windows 11 (22000+)
+if is_windows() then
+    local success, stdout, stderr = wezterm.run_child_process({ "cmd.exe", "/c", "ver" })
+    if success and stdout then
+        -- Extract build number from version string (e.g., "10.0.17763")
+        local build = stdout:match("10%.0%.(%d+)")
+        if build and tonumber(build) == 17763 then
+            config.prefer_egl = true
+        end
+    end
+end
+
+
 -- Finally, return the configuration to wezterm:
 return config
 
