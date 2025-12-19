@@ -124,6 +124,7 @@ config.harfbuzz_features = { 'calt=0' }
 
 -- On Windows 2019, openGL is too old, so we need to use an alternate rendering scheme
 -- Only enable on Windows Server 2019 (build 17763), not on Windows 11 (22000+)
+-- TODO: this does not seem to work after ALL? Not sure what is going on, need to revisit (or find something newer than 2019)
 if is_windows() then
     local success, stdout, stderr = wezterm.run_child_process({ "cmd.exe", "/c", "ver" })
     if success and stdout then
