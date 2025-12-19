@@ -10,8 +10,12 @@ First, [install chezmoi](https://www.chezmoi.io/install/). This 1-liner often wo
 
     sh -c "$(curl -fsLS get.chezmoi.io)"
 
-Next, initialize it:
+Next, initialize it and apply:
 
+    # Shorthand (as I have a github repo called "dotfiles")
+    chezmoi init dswisher
+
+    # The more complete
     chezmoi init https://github.com/dswisher/dotfiles.git
 
 This will give you a git repo in `.local/share/chezmoi`, that was checked out with https.

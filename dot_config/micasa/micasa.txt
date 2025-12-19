@@ -1,5 +1,6 @@
 
 chezmoi: ~= 2.68.1
+claude-code:
 curl
 eza
 fd
