@@ -32,8 +32,9 @@ alias vi=nvim
 
 
 # If this is windows, set the config location
+# TODO: this should be set in the system environment variables, so launching tools (like wezterm) will pick it up
 # TODO: only set this on windows! (But it shouldn't hurt anywhere else)
-export XDG_CONFIG_HOME=$HOME/.config
+# export XDG_CONFIG_HOME=$HOME/.config
 
 
 # enable color support of ls and also add handy aliases
