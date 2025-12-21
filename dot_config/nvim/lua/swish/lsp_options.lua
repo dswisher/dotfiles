@@ -10,14 +10,21 @@ vim.lsp.enable('terraform_ls')
 
 -- Configure diagnostics.
 vim.diagnostic.config({
+    -- Config block that shows diagnostics on the line(s) below the line with the diagnostic. I'm finding this
+    -- too distracting, so I'm going to switch back to diagnostics on the end of the line.
+    -- BEGIN
     -- Show error messages below the line with the issue.
     -- virtual_lines = true,
-     virtual_lines = {
-        current_line = true,
-    },
+    --  virtual_lines = {
+    --     current_line = true,
+    -- },
 
     -- It is recommended to disable virtual_text to avoid conflicts
-    virtual_text = false,
+    -- virtual_text = false,
+    -- END
+
+    -- Show diagnostic messages on the right side of the line
+    virtual_text = true
 
     -- Only show the virtual text for the current line; showing everything was too much.
     -- Use the sign column to locate lines with issues.

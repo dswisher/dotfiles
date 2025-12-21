@@ -12,3 +12,6 @@ require("current-theme")
 -- Set up LSP options, like key binds
 require("swish.lsp_options")
 
+-- Override things that may be set by the colorscheme or w/e
+require("swish.overrides")
+

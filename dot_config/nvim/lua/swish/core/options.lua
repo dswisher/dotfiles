@@ -57,3 +57,12 @@ vim.opt.list = true
 -- I want to be able to use the mouse to copy/paste, and that is all. So, disable neovim mouse handling.
 vim.opt.mouse = ""
 
+-- I want borders on LSP hover popups.
+--    See: https://samuellawrentz.com/blog/vim-lsp-hover-borders/
+-- This sets them globally. If that is too much, see the above article for hover-specific option
+vim.opt.winborder = 'rounded'
+
+-- Try making colors look better
+-- NOTE: not sure what effect (if any) this is having
+vim.opt.termguicolors = true
+

@@ -46,8 +46,9 @@ export GIT_EDITOR="$EDITOR"
 alias vi=$EDITOR
 
 
-# A quicker way to activate a virtual environment
+# Some handy aliases for things that I type a lot
 alias sva="source .venv/bin/activate"
+alias lg=lazygit
 
 
 # ripgrep config

@@ -15,3 +15,14 @@ vim.keymap.del('n', 'grr')          -- vim.lsp.buf.references()
 vim.keymap.del('n', 'grt')          -- vim.lsp.buf.type_definition()
 vim.keymap.del('n', 'gO')           -- vim.lsp.buf.document_symbol()
 
+-- Set up a way to use ESC to close hover windows (which are floating windows)
+local function close_lsp_hover()
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    if vim.api.nvim_win_get_config(win).relative ~= "" then
+      vim.api.nvim_win_close(win, false)
+      return
+    end
+  end
+end
+
+vim.keymap.set('n', '<Esc>', close_lsp_hover, { silent = true, desc = "Close LSP hover window" })
