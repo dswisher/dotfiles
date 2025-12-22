@@ -8,6 +8,6 @@ return {
             create_mappings = false,
         })
 
-        vim.keymap.set({"n", "v"}, "<leader>c", ":CommentToggle<cr>", { desc = "nvim-command: toggle comments" })
+        vim.keymap.set({"n", "v"}, "<leader>cc", ":CommentToggle<cr>", { desc = "nvim-command: toggle comments" })
     end
 }

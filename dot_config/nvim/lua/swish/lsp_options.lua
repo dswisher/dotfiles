@@ -44,17 +44,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         local tele = require("telescope.builtin")
 
-        -- TODO: what does this .buf.declaration mapping do, and how does it differ from lsp_definitions?
-        -- map("gd", vim.lsp.buf.declaration, "go to declaration")
+        -- go to the symbol's declaration, which might be just a type signature or prototype without the implementation
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration,
+            { buffer = ev.buf, desc = 'LSP: Goto Declaration' })
+
+        -- go to the actual place(s) where a symbol (function, variable, class) is defined and given a value.
         vim.keymap.set('n', 'gd', tele.lsp_definitions,
             { buffer = ev.buf, desc = 'LSP: Goto Definition (via telescope)' })
 
+        -- display a list of all known diagnostics (warnings, errors, hints)
         vim.keymap.set('n', '<leader>fd', tele.diagnostics,
             { buffer = ev.buf, desc = 'LSP: Diagnostics (via telescope)' })
 
+        -- list references for the word under the cursor
         vim.keymap.set('n', '<leader>fr', tele.lsp_references,
             { buffer = ev.buf, desc = 'LSP: Goto References (via telescope)' })
 
+        -- list the methods and functions in the current document
         vim.keymap.set("n", "<leader>fs", function()
             require("telescope.builtin").lsp_document_symbols({
                 symbols = {
@@ -63,6 +69,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 }
             })
         end, { desc = "LSP: Doc Symbols (via telescope)" })
+
+        -- TODO: why doesn't `gf` work on the following line? It seems to be treating the `.lua` as `/lua`?
+        -- NOTE: code-action (ca) binding is in the plugins/tiny-code-action-nvim.lua plugin setup
+        -- vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action,
+        --     { buffer = ev.buf, desc = "LSP: code action" })
 
         -- map('<leader>fS', tele.lsp_dynamic_workspace_symbols, 'Dynamic Symbols')
         -- map('<leader>ft', tele.lsp_type_definitions, 'Goto Type')
