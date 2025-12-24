@@ -87,9 +87,11 @@ config.keys = {
   -- new (d)os tab
   { key = 'd', mods = 'ALT', action = act.SpawnCommandInNewTab { args = cmd_exe } },
 
-  -- enable pasting with ctrl+v
-  -- NOTE: this breaks the ability to use ctrl+v in VIM to insert a literal (like tab)
-  -- { key = 'v', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
+  -- enable pasting with shift+ctrl+v
+  { key = 'v', mods = 'SHIFT|CTRL', action = act.PasteFrom 'Clipboard' },
+
+  -- enable copying with shift+ctrl+c (is this needed, given that just selecting seems to copy?)
+  { key = 'c', mods = 'SHIFT|CTRL', action = act.CopyTo 'Clipboard' },
 
   -- new window bindings
   -- TODO: should I be setting the command, here?
