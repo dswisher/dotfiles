@@ -27,8 +27,7 @@ shopt -s checkwinsize
 
 
 # I want to use nvim
-# TODO: only set this if neovim is available
-alias vi=nvim
+alias vi="$EDITOR"
 
 
 # If this is windows, set the config location

@@ -3,7 +3,19 @@
 echo "...running .profile..."
 
 # Set some variables
-export EDITOR="vim"
+if [ -f $HOME/.local/bin/nvim ]; then
+    export EDITOR=$HOME/.local/bin/nvim
+elif [ -f /opt/homebrew/bin/nvim ]; then
+    export EDITOR=/opt/homebrew/bin/nvim
+elif [ -f /c/tools/neovim/nvim-win64/bin/nvim ]; then
+    export EDITOR=/c/tools/neovim/nvim-win64/bin/nvim
+elif [ -f /usr/local/bin/vim ]; then
+    export EDITOR=/usr/local/bin/vim
+else
+    export EDITOR=/usr/bin/vim
+fi
+export VISUAL="$EDITOR"
+export GIT_EDITOR="$EDITOR"
 
 
 # If this is bash, load up bashrc, too
