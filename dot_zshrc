@@ -48,6 +48,7 @@ alias vi=$EDITOR
 
 
 # Some handy aliases for things that I type a lot
+# TODO: check for windows, and source .venv/Scripts/activate
 alias sva="source .venv/bin/activate"
 alias lg=lazygit
 

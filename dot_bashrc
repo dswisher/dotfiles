@@ -30,6 +30,12 @@ shopt -s checkwinsize
 alias vi="$EDITOR"
 
 
+# Some handy aliases for things that I type a lot
+# TODO: check for mac/linux, and source .venv/bin/activate
+alias sva="source .venv/Scripts/activate"
+alias lg=lazygit
+
+
 # If this is windows, set the config location
 # TODO: this should be set in the system environment variables, so launching tools (like wezterm) will pick it up
 # TODO: only set this on windows! (But it shouldn't hurt anywhere else)
