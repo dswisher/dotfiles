@@ -34,11 +34,12 @@ vim.diagnostic.config({
     -- },
 })
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
+-- For buffers that have LSP enabled, set up some things
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
+        -- KEY MAPPINGS FOR BUFFERS WITH LSP ENABLED
+
         -- local map = function(keys, func, desc)
         --     vim.keymap.set('n', keys, func, { buffer = ev.buf, desc = 'LSP: ' .. desc })
         -- end
@@ -105,6 +106,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
         -- local dapui = require('dapui')
         -- map('<leader>duu', dapui.open, 'open ui')
         -- map('<leader>duc', dapui.close, 'open ui')
+
+
+        -- GO - set up specifics for the language
+        if vim.bo[ev.buf].filetype == "go" then
+            -- do not show whitespace, since go uses tabs and we format on save anyway
+            vim.opt_local.list = false
+
+            -- format on save
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                buffer = ev.buf,
+                callback = function()
+                    vim.lsp.buf.format { async = false }
+                end,
+            })
+        end
     end,
 })
 

@@ -62,7 +62,7 @@ if [ -f /usr/local/bin/brew ]; then
     export HOMEBREW_AUTO_UPDATE_SECS=86400
 elif [ -f /opt/homebrew/bin/brew ]; then
     # Add to path
-    export PATH="$PATH:/opt/homebrew/bin"
+    export PATH="/opt/homebrew/bin:$PATH"
     # Only update once per day
     export HOMEBREW_AUTO_UPDATE_SECS=86400
 fi
@@ -156,6 +156,12 @@ fi
 # If rust is installed, configure it
 if [ -f $HOME/.cargo/env ]; then
     . "$HOME/.cargo/env"
+fi
+
+
+# A little bit of setup for GO
+if [ -d $HOME/go ]; then
+    export PATH="$HOME/go/bin:$PATH"
 fi
 
 

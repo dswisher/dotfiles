@@ -4,6 +4,7 @@
 
 return {
     cmd = { 'gopls' },
-    filetypes = { 'go' }
+    filetypes = { 'go' },
+    root_markers = { '.git' },
 }
 
