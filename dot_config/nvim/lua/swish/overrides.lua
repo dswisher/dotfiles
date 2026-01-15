@@ -21,3 +21,9 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
   end,
 })
 
+-- Allow comments in JSON files with the .jsonc extension
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    pattern = {"*.jsonc"},
+    command = "setlocal filetype=jsonc",
+})
+

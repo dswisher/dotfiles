@@ -53,6 +53,10 @@ alias sva="source .venv/bin/activate"
 alias lg=lazygit
 
 
+# Put configs in a place where I can find them
+export XDG_CONFIG_HOME=$HOME/.config
+
+
 # ripgrep config
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
