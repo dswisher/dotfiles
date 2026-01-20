@@ -52,6 +52,9 @@ alias vi=$EDITOR
 alias sva="source .venv/bin/activate"
 alias lg=lazygit
 
+# TODO: only set this if lazysql is installed
+alias sql=lazysql
+
 
 # Put configs in a place where I can find them
 export XDG_CONFIG_HOME=$HOME/.config
