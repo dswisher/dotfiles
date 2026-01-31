@@ -267,6 +267,11 @@ alias dj-claude='export CLAUDE_CONFIG_DIR=$HOME/.claude-dj'
 alias my-claude='export CLAUDE_CONFIG_DIR=$HOME/.claude-personal'
 
 
+# ZScaler Fun for DJ
+if [ -f /opt/newscorp/zscaler/zscaler.inc ]; then
+    source /opt/newscorp/zscaler/zscaler.inc
+fi
+
 
 # added by Snowflake SnowSQL installer v1.2
 export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
