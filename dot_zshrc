@@ -91,7 +91,6 @@ export FZF_DEFAULT_COMMAND='rg --files'
 
 
 # pyenv support (if installed)
-# TODO: pyenv and uv seem to fight about virtual environments, like in micasa
 if [ -d $HOME/.pyenv ]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
@@ -99,6 +98,7 @@ if [ -d $HOME/.pyenv ]; then
     eval "$(pyenv init --path)"
     eval "$(pyenv init -)"
 
+    # pyenv and uv seem to fight about virtual environments, so do not enable pyenv virtualenv
     # if which pyenv-virtualenv-init > /dev/null 2>&1; then
     #     eval "$(pyenv virtualenv-init -)";
     # fi
@@ -177,6 +177,15 @@ if [ -d $HOME/go ]; then
 fi
 
 
+# Set up tokendito, if installed. Basically, we just want the config to be in a sane, consistent place.
+# NOTE: This must be done AFTER pyenv is configured, so the command will be found.
+if [ -x "$(command -v tokendito)" ]; then
+    # The tokendito docs claim that you can override the config file with an environment variable,
+    # but in my testing, that proved not to be true. So, define an alias that does so.
+    alias tokendito="tokendito --config-file $HOME/.config/tokendito/tokendito.ini"
+fi
+
+
 # Set up chruby, used to play with Jekyll on Mac
 # if [ -d /opt/homebrew/opt/chruby/share/chruby ]; then
 #     source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
@@ -232,6 +241,12 @@ fi
 # Create an alias for fd on Ubuntu
 if [ -f /usr/bin/fdfind ]; then
     alias fd=fdfind
+fi
+
+
+# If eza exists, set up an alias
+if [ -x "$(command -v eza)" ]; then
+    alias ls=eza
 fi
 
 
