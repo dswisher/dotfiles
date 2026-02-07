@@ -16,6 +16,10 @@ return {
 
         local vault_dir = "~/git/dswisher/my-obsidian-vault"
 
+        if vim.fn.isdirectory(vim.fn.expand(vault_dir)) == 0 then
+            return
+        end
+
         obsidian.setup({
             legacy_commands = false, -- this will be removed in the next major release
             workspaces = {
