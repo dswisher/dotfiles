@@ -50,10 +50,14 @@ alias vi=$EDITOR
 # Some handy aliases for things that I type a lot
 # TODO: check for windows, and source .venv/Scripts/activate
 alias sva="source .venv/bin/activate"
-alias lg=lazygit
 
-# TODO: only set this if lazysql is installed
-alias sql=lazysql
+if [ -x "$(command -v lazygit)" ]; then
+    alias lg=lazygit
+fi
+
+if [ -x "$(command -v lazysql)" ]; then
+    alias sql=lazysql
+fi
 
 
 # Put configs in a place where I can find them
