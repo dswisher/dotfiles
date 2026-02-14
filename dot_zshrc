@@ -47,19 +47,6 @@ export GIT_EDITOR="$EDITOR"
 alias vi=$EDITOR
 
 
-# Some handy aliases for things that I type a lot
-# TODO: check for windows, and source .venv/Scripts/activate
-alias sva="source .venv/bin/activate"
-
-if [ -x "$(command -v lazygit)" ]; then
-    alias lg=lazygit
-fi
-
-if [ -x "$(command -v lazysql)" ]; then
-    alias sql=lazysql
-fi
-
-
 # Put configs in a place where I can find them
 export XDG_CONFIG_HOME=$HOME/.config
 
@@ -196,6 +183,19 @@ fi
 #     source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 #     chruby ruby-3.3.4
 # fi
+
+
+# Some handy aliases for things that I type a lot
+# TODO: check for windows, and source .venv/Scripts/activate
+alias sva="source .venv/bin/activate"
+
+if [ -x "$(command -v lazygit)" ]; then
+    alias lg=lazygit
+fi
+
+if [ -x "$(command -v lazysql)" ]; then
+    alias sql=lazysql
+fi
 
 
 # Reset the wezterm (and other) titles
