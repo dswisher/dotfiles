@@ -111,20 +111,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         -- map('<leader>duu', dapui.open, 'open ui')
         -- map('<leader>duc', dapui.close, 'open ui')
 
-
-        -- GO - set up specifics for the language
-        if vim.bo[ev.buf].filetype == "go" then
-            -- do not show whitespace, since go uses tabs and we format on save anyway
-            vim.opt_local.list = false
-
-            -- format on save
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                buffer = ev.buf,
-                callback = function()
-                    vim.lsp.buf.format { async = false }
-                end,
-            })
-        end
     end,
 })
 
