@@ -72,6 +72,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
             })
         end, { desc = "LSP: Doc Symbols (via telescope)" })
 
+        -- rename the symbol under the cursor
+        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename,
+            { buffer = ev.buf, desc = 'LSP: Rename symbol' })
+
         -- TODO: why doesn't `gf` work on the following line? It seems to be treating the `.lua` as `/lua`?
         -- NOTE: code-action (ca) binding is in the plugins/tiny-code-action-nvim.lua plugin setup
         -- vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action,

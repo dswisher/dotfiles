@@ -14,5 +14,13 @@
     },
     "keybinds": {
         "leader": "ctrl+space"
+    },
+    "provider": {
+        "openrouter": {
+            "npm": "@ai-sdk/openai-compatible",
+            "options": {
+                "baseURL": "https://openrouter.ai/api/v1"
+            }
+        }
     }
 }
