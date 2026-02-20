@@ -6,7 +6,10 @@
         "grep": "allow",
         "glob": "allow",
         "list": "allow",
-        "bash": "ask",
+        "bash": {
+            "git diff": "allow",
+            "git status": "allow"
+        },
         "task": "ask",
         "webfetch": "allow",
         "websearch": "ask",
@@ -15,6 +18,7 @@
     "keybinds": {
         "leader": "ctrl+space"
     },
+    "enabled_providers": ["amazon-bedrock", "github-copilot"],
     "provider": {
         "openrouter": {
             "npm": "@ai-sdk/openai-compatible",
