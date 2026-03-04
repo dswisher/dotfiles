@@ -30,12 +30,17 @@ return {
             },
             daily_notes = {
                 folder = "daily-journal",
-                -- date_format = nil,
+                date_format = "%Y/%m/%Y-%m-%d",
                 -- alias_format = nil,
-                -- default_tags = { "daily-notes" },
+                default_tags = { "daily-notes" },
                 workdays_only = false,
             },
         })
+
+        -- My own key mappings, as shortcuts for the Obsidian commands
+        vim.keymap.set('n', '<leader>os', function()
+            vim.cmd("Obsidian search")
+        end, { desc = 'obsidian: search' })
 
         -- Based on https://github.com/zazencodes/dotfiles/blob/main/nvim/lua/workflows.lua
         vim.keymap.set('n', '<leader>of', function()
