@@ -185,6 +185,14 @@ fi
 # fi
 
 
+# If bun is installed, set it up. I needed this to be able to run "bunx opencode-usage".
+# I need to find a better tool that produces a report list ccusage.
+if [ -d $HOME/.bun ]; then
+    export BUN_INSTALL="$HOME/.bun"
+    export PATH="$PATH:$BUN_INSTALL/bin"
+fi
+
+
 # Some handy aliases for things that I type a lot
 # TODO: check for windows, and source .venv/Scripts/activate
 alias sva="source .venv/bin/activate"
