@@ -28,6 +28,13 @@ export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 
+# Local stuff. We need to get this in the path early, so that "command" checks for tools
+# will find stuff there.
+if [ -d ~/.local/bin ]; then
+    export PATH="$PATH:$HOME/.local/bin"
+fi
+
+
 # use neovim when available, or fall back to vim
 # TODO: this is also being done in dot_profile, how can we unify them avoid repeating ourself?
 if [ -f $HOME/.local/bin/nvim ]; then
@@ -164,7 +171,9 @@ fi
 
 # A little bit of setup for GO
 if [ -d $HOME/go ]; then
-    export PATH="$HOME/go/bin:$PATH"
+    export PATH="$PATH:$HOME/go/bin"
+elif [ -d /usr/local/go ]; then
+    export PATH="$PATH:$HOME/go/bin"
 fi
 
 
@@ -276,12 +285,6 @@ fi
 autoload -U compinit && compinit
 
 
-# Local stuff
-if [ -d ~/.local/bin ]; then
-    export PATH="$PATH:$HOME/.local/bin"
-fi
-
-
 # Set up zoxide - improved cd - uses "z" in the shell - see https://github.com/ajeetdsouza/zoxide
 if [[ -f /opt/homebrew/bin/zoxide || -f ~/.local/bin/zoxide || -f /usr/bin/zoxide ]]; then
     export _ZO_ECHO=1
@@ -289,8 +292,16 @@ if [[ -f /opt/homebrew/bin/zoxide || -f ~/.local/bin/zoxide || -f /usr/bin/zoxid
 fi
 
 
+# Opencode, if installed via their installer into their own directory
+if [ -d ~/.opencode/bin ]; then
+    export PATH=$PATH:/home/swisher/.opencode/bin
+fi
+
+
 # Fuzzy fun
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f ~/.fzf.zsh ]; then
+    source ~/.fzf.zsh
+fi
 
 # Set the default claude config - work config
 export CLAUDE_CONFIG_DIR=$HOME/.claude-dj
@@ -306,7 +317,9 @@ fi
 
 
 # added by Snowflake SnowSQL installer v1.2
-export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+if [ -d /Applications/SnowSQL.app ]; then
+    export PATH=$PATH:/Applications/SnowSQL.app/Contents/MacOS
+fi
 
 # Tell neovim we're in a shell script
 # vim:ft=sh

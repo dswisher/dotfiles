@@ -15,8 +15,5 @@
         "websearch": "ask",
         "external_directory": "ask"
     },
-    "keybinds": {
-        "leader": "ctrl+space"
-    },
-    "enabled_providers": ["amazon-bedrock", "github-copilot"]
+    "enabled_providers": ["amazon-bedrock", "github-copilot", "opencode", "opencode-go"]
 }
