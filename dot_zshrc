@@ -292,6 +292,12 @@ if [[ -f /opt/homebrew/bin/zoxide || -f ~/.local/bin/zoxide || -f /usr/bin/zoxid
 fi
 
 
+# If installed, set up hledger
+if [ -x "$(command -v hledger)" ]; then
+    export LEDGER_FILE=$HOME/git/dswisher/my-ledger/main.journal
+fi
+
+
 # Opencode, if installed via their installer into their own directory
 if [ -d ~/.opencode/bin ]; then
     export PATH=$PATH:/home/swisher/.opencode/bin
@@ -302,6 +308,7 @@ fi
 if [ -f ~/.fzf.zsh ]; then
     source ~/.fzf.zsh
 fi
+
 
 # Set the default claude config - work config
 export CLAUDE_CONFIG_DIR=$HOME/.claude-dj
