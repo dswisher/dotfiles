@@ -76,5 +76,15 @@ if [[ -f /opt/homebrew/bin/zoxide || -f ~/.local/bin/zoxide || -f /usr/bin/zoxid
 fi
 
 
+# If installed, set up hledger
+if [ -x "$(command -v hledger)" ]; then
+    export LEDGER_FILE=$HOME/git/dswisher/my-ledger/main.journal
+fi
+
+
+# opencode
+export PATH=/c/Users/swish/.opencode/bin:$PATH
+
+
 # Tell neovim this is a bash script
 # vim:ft=bash
