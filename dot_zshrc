@@ -170,8 +170,17 @@ fi
 
 
 # A little bit of setup for GO
+# This bit makes sure that the GO binary is on the path if installed locally
+# Go installation
+if [ -d $HOME/.local/go ]; then
+    export PATH="$HOME/.local/go/bin:$PATH"
+fi
+
+
+# This bit sets up the location for installed GO packages
 if [ -d $HOME/go ]; then
-    export PATH="$PATH:$HOME/go/bin"
+    export GOPATH="$HOME/go"
+    export PATH="$GOPATH/bin:$PATH"
 elif [ -d /usr/local/go ]; then
     export PATH="$PATH:$HOME/go/bin"
 fi
@@ -262,6 +271,12 @@ fi
 # Create an alias for fd on Ubuntu
 if [ -f /usr/bin/fdfind ]; then
     alias fd=fdfind
+fi
+
+
+# Create an alias for bat on Ubuntu
+if [ -f /usr/bin/batcat ]; then
+    alias bat=batcat
 fi
 
 
