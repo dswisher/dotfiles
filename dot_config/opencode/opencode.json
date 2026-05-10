@@ -6,6 +6,7 @@
         "grep": "allow",
         "glob": "allow",
         "list": "allow",
+        "lsp": "allow",
         "bash": {
             "git diff": "allow",
             "git status": "allow"
@@ -15,5 +16,12 @@
         "websearch": "ask",
         "external_directory": "ask"
     },
-    "enabled_providers": ["amazon-bedrock", "github-copilot", "opencode", "opencode-go"]
+    "enabled_providers": ["amazon-bedrock", "github-copilot", "opencode", "opencode-go"],
+    "lsp": {
+        "go": {
+            "disabled": false,
+            "command": ["gopls"],
+            "extensions": [".go"]
+        }
+  }
 }
