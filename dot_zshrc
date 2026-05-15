@@ -343,5 +343,10 @@ if [ -d /Applications/SnowSQL.app ]; then
     export PATH=$PATH:/Applications/SnowSQL.app/Contents/MacOS
 fi
 
+# snowflake dev tools, if they exist
+if [ -d $HOME/git/rnc/snowflake/rnc-snowflake-devtools ]; then
+    export PATH=$PATH:$HOME/git/rnc/snowflake/rnc-snowflake-devtools/scripts
+fi
+
 # Tell neovim we're in a shell script
 # vim:ft=sh
