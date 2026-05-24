@@ -2,7 +2,7 @@
 -- See https://github.com/nvim-telescope/telescope.nvim
 
 return {
-    'nvim-telescope/telescope.nvim', tag = 'v0.2.0',
+    'nvim-telescope/telescope.nvim', version = '*',
     dependencies = {
         'nvim-lua/plenary.nvim',
         "nvim-tree/nvim-web-devicons"
@@ -24,6 +24,9 @@ return {
             pickers = {
                 buffers = {
                     sort_mru = true,
+                },
+                lsp_document_symbols = {
+                    symbol_width = 70,
                 },
             },
         })
