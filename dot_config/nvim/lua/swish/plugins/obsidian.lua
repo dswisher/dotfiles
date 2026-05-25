@@ -22,6 +22,9 @@ return {
 
         obsidian.setup({
             legacy_commands = false, -- this will be removed in the next major release
+            ui = {
+                enable = false,     -- I don't like conceallevel set, so need to shut off the UI
+            },
             workspaces = {
                 {
                     name = "my-vault",
