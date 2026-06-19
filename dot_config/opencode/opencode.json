@@ -40,6 +40,11 @@
             "url": "https://vir-lookup-tracker.feedgen.stg.rnc-feeds.dowjones.io/mcp",
             "enabled": false
         },
+        "dmi": {
+            "type": "local",
+            "command": ["uv", "run", "--directory", "/Users/swisherd/git/rnc/snowflake/rnc-feeds-dmi-mcp", "mcp-server-dmi"],
+            "enabled": false
+        },
         "snowflake": {
             "type": "local",
             "command": ["uv", "run", "--directory", "/Users/swisherd/git/rnc/snowflake/dpc-snowflake-mcp", "mcp-server-snowflake"],
