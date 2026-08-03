@@ -49,12 +49,12 @@
             "type": "local",
             "command": ["uv", "run", "--directory", "/Users/swisherd/git/rnc/snowflake/dpc-snowflake-mcp", "mcp-server-snowflake"],
             "environment": {
-                "SNOWFLAKE_USER": "DOUG.SWISHER@DOWJONES.COM",
+                "SNOWFLAKE_USER": "DS_SA_DPC_MCP",
                 "SNOWFLAKE_ACCOUNT": "DJ-DATASERVICES_INT_US_EAST_1",
                 "SNOWFLAKE_DATABASE": "DS_LOCAL_SILVER",
-                "SNOWFLAKE_WAREHOUSE": "DS_XSMALL_WH",
-                "SNOWFLAKE_ROLE": "DS_DEVELOPER",
-                "SNOWFLAKE_PRIVATE_KEY_FILE": "/Users/swisherd/.ssh/snowflake-dbt-key2.p8"
+                "SNOWFLAKE_WAREHOUSE": "DS_DPC_MCP_SMALL_WH",
+                "SNOWFLAKE_ROLE": "DS_APP_DPC_MCP",
+                "SNOWFLAKE_PRIVATE_KEY_FILE": "/Users/swisherd/.ssh/snowflake-mcp-key.p8"
             },
             "enabled": false
         }
