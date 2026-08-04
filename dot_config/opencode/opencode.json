@@ -25,19 +25,34 @@
         }
     },
     "mcp": {
-        "feedgen-diff": {
+        "staging-diff-manager": {
             "type": "remote",
             "url": "https://vir-diff-manager.feedgen.stg.rnc-feeds.dowjones.io/mcp",
             "enabled": false
         },
-        "feedgen-file-librarian": {
+        "staging-file-librarian": {
             "type": "remote",
             "url": "https://vir-file-librarian.feedgen.stg.rnc-feeds.dowjones.io/mcp",
             "enabled": false
         },
-        "feedgen-lookup-tracker": {
+        "staging-lookup-tracker": {
             "type": "remote",
             "url": "https://vir-lookup-tracker.feedgen.stg.rnc-feeds.dowjones.io/mcp",
+            "enabled": false
+        },
+        "prod-diff-manager": {
+            "type": "remote",
+            "url": "https://vir-diff-manager.feedgen.rnc-feeds.dowjones.io/mcp",
+            "enabled": false
+        },
+        "prod-file-librarian": {
+            "type": "remote",
+            "url": "https://vir-file-librarian.feedgen.rnc-feeds.dowjones.io/mcp",
+            "enabled": false
+        },
+        "prod-lookup-tracker": {
+            "type": "remote",
+            "url": "https://vir-lookup-tracker.feedgen.rnc-feeds.dowjones.io/mcp",
             "enabled": false
         },
         "dmi": {
@@ -45,7 +60,7 @@
             "command": ["uv", "run", "--directory", "/Users/swisherd/git/rnc/snowflake/rnc-feeds-dmi-mcp", "mcp-server-dmi"],
             "enabled": false
         },
-        "snowflake": {
+        "int-snowflake": {
             "type": "local",
             "command": ["uv", "run", "--directory", "/Users/swisherd/git/rnc/snowflake/dpc-snowflake-mcp", "mcp-server-snowflake"],
             "environment": {
@@ -54,7 +69,20 @@
                 "SNOWFLAKE_DATABASE": "DS_LOCAL_SILVER",
                 "SNOWFLAKE_WAREHOUSE": "DS_DPC_MCP_SMALL_WH",
                 "SNOWFLAKE_ROLE": "DS_APP_DPC_MCP",
-                "SNOWFLAKE_PRIVATE_KEY_FILE": "/Users/swisherd/.ssh/snowflake-mcp-key.p8"
+                "SNOWFLAKE_PRIVATE_KEY_FILE": "/Users/swisherd/.ssh/snowflake-mcp-key-int.p8"
+            },
+            "enabled": false
+        },
+        "prod-snowflake": {
+            "type": "local",
+            "command": ["uv", "run", "--directory", "/Users/swisherd/git/rnc/snowflake/dpc-snowflake-mcp", "mcp-server-snowflake", "--env-file", "/dev/null"],
+            "environment": {
+                "SNOWFLAKE_USER": "DOUG.SWISHER@DOWJONES.COM",
+                "SNOWFLAKE_ACCOUNT": "DJ-DATASERVICES_PROD_US_EAST_1",
+                "SNOWFLAKE_DATABASE": "DS_DPC_SILVER",
+                "SNOWFLAKE_WAREHOUSE": "DS_XSMALL_WH",
+                "SNOWFLAKE_ROLE": "DS_ANALYST",
+                "SNOWFLAKE_PRIVATE_KEY_FILE": "/Users/swisherd/.ssh/snowflake-key-prod.p8"
             },
             "enabled": false
         }
