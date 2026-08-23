@@ -240,6 +240,10 @@ if [[ "$HOST" = "C02Z32DYLVDR" || "$HOST" = "Q6GQCX1C96.local" || "$HOST" == "Q6
     alias delivery='cd ~/git/rnc/delivery'
 fi
 
+if [[ "$HOST" = "Dougs-MacBook-Pro.local" ]]; then
+    export PS1="dougs-mac: "
+fi
+
 if [ "$USER" = "ec2-user" ]; then
     export PS1="ec2: "
     if [ -f $HOME/.aws/credentials ]; then
