@@ -25,6 +25,21 @@
         }
     },
     "mcp": {
+        "nonprod-diff-manager": {
+            "type": "remote",
+            "url": "https://vir-diff-manager.feedgen.dev.rnc-feeds.dowjones.io/mcp",
+            "enabled": false
+        },
+        "nonprod-file-librarian": {
+            "type": "remote",
+            "url": "https://vir-file-librarian.feedgen.dev.rnc-feeds.dowjones.io/mcp",
+            "enabled": false
+        },
+        "nonprod-lookup-tracker": {
+            "type": "remote",
+            "url": "https://vir-lookup-tracker.feedgen.dev.rnc-feeds.dowjones.io/mcp",
+            "enabled": false
+        },
         "staging-diff-manager": {
             "type": "remote",
             "url": "https://vir-diff-manager.feedgen.stg.rnc-feeds.dowjones.io/mcp",
