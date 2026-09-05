@@ -1,3 +1,14 @@
 
+# Homebrew takes care of updates
+auto-update = off
+
+# Always open new windows/tabs in home directory
+working-directory = home
+
+# Colors?
+# background = #000080
+# foreground = #F0F000
+
+# Shut down the app when app windows go away
 quit-after-last-window-closed = true
 
