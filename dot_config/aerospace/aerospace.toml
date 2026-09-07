@@ -87,7 +87,7 @@ gaps.outer.right =      10
 on-window-detected = [
     {
         if = 'test %{app-name} = FromHamletToHome.Desktop',
-        run = ['move-node-to-workspace 9', 'workspace 9']
+        run = ['move-node-to-workspace 9']
     }
 ]
 
