@@ -237,6 +237,10 @@ on-window-detected = [
     cmd-alt-ctrl-shift-h = 'focus-monitor left'
     cmd-alt-ctrl-shift-l = 'focus-monitor right'
 
+    # Replacement for the mission control bindings
+    ctrl-right = 'workspace next'
+    ctrl-left = 'workspace prev'
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
 
