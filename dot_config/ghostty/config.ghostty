@@ -5,6 +5,10 @@ auto-update = off
 # Always open new windows/tabs in home directory
 working-directory = home
 
+window-inherit-working-directory = false
+tab-inherit-working-directory    = false
+split-inherit-working-directory  = false
+
 # Colors?
 # background = #000080
 # foreground = #F0F000
