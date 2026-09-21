@@ -193,7 +193,8 @@ on-window-detected = [
     # cmd-alt-ctrl-shift-w = 'workspace W'
     # cmd-alt-ctrl-shift-x = 'workspace X'
     # cmd-alt-ctrl-shift-y = 'workspace Y'
-    # cmd-alt-ctrl-shift-z = 'workspace Z'
+
+    cmd-alt-ctrl-shift-z = 'workspace-back-and-forth'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
