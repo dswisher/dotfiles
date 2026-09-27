@@ -75,6 +75,19 @@
             "command": ["uv", "run", "--directory", "/Users/swisherd/git/rnc/snowflake/rnc-feeds-dmi-mcp", "mcp-server-dmi"],
             "enabled": false
         },
+        "finplan-pl-mcp": {
+            "type": "local",
+            "command": ["uv", "run", "--directory", "/Users/swish/git/dswisher/finplan-pl-mcp", "finplan-pl-mcp"],
+            "enabled": false
+        },
+        "chrome-devtools": {
+            "type": "local",
+            "command": [
+                "chrome-devtools-mcp",
+                "--browser-url=http://127.0.0.1:9222"
+            ],
+            "enabled": false
+        },
         "int-snowflake": {
             "type": "local",
             "command": ["uv", "run", "--directory", "/Users/swisherd/git/rnc/snowflake/dpc-snowflake-mcp", "mcp-server-snowflake"],
