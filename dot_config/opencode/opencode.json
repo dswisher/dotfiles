@@ -120,5 +120,11 @@
             },
             "enabled": false
         }
+    },
+    "tools": {
+        "atlassian_*": false,
+        "atlassian_getAccessibleAtlassianResources": true,
+        "atlassian_getJiraIssue": true,
+        "atlassian_searchJiraIssuesUsingJql": true
     }
 }
