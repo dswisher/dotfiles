@@ -81,11 +81,6 @@
             "command": ["uv", "run", "--directory", "/Users/swisherd/git/rnc/snowflake/rnc-feeds-dmi-mcp", "mcp-server-dmi"],
             "enabled": false
         },
-        "finplan-pl-mcp": {
-            "type": "local",
-            "command": ["uv", "run", "--directory", "/Users/swish/git/dswisher/finplan-pl-mcp", "finplan-pl-mcp"],
-            "enabled": false
-        },
         "chrome-devtools": {
             "type": "local",
             "command": [
