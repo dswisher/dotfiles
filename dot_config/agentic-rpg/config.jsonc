@@ -1,0 +1,39 @@
+{
+  "defaultModel": "local-qwen",
+  "models": [
+    {
+      "name": "local-qwen",
+      "provider": "ollama",
+      "modelId": "qwen3.5:35b-a3b",
+      "options": {
+        "endpoint": "http://localhost:11434/v1/"
+      }
+    },
+    {
+      "name": "local-fast",
+      "provider": "ollama",
+      "modelId": "qwen3.5:0.8b",
+      "options": {
+        "endpoint": "http://localhost:11434/v1/"
+      }
+    },
+    {
+      "name": "bedrock-sonnet",
+      "provider": "bedrock",
+      "modelId": "global.anthropic.claude-sonnet-4-6",
+      "options": {
+        "region": "us-east-1"
+      },
+      "authProfile": "bedrock"
+    },
+    {
+      "name": "bedrock-haiku",
+      "provider": "bedrock",
+      "modelId": "global.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "options": {
+        "region": "us-east-1"
+      },
+      "authProfile": "bedrock"
+    }
+  ]
+}
