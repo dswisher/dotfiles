@@ -2,7 +2,7 @@
   "defaultModel": "local-qwen",
   "models": [
     {
-      "name": "local-qwen",
+      "name": "local-qwen-35b",
       "provider": "ollama",
       "modelId": "qwen3.5:35b-a3b",
       "options": {
@@ -10,7 +10,15 @@
       }
     },
     {
-      "name": "local-fast",
+      "name": "local-qwen-9b",
+      "provider": "ollama",
+      "modelId": "qwen3.5:9b",
+      "options": {
+        "endpoint": "http://localhost:11434/v1/"
+      }
+    },
+    {
+      "name": "local-qwen-0.8b",
       "provider": "ollama",
       "modelId": "qwen3.5:0.8b",
       "options": {
