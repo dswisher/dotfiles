@@ -1,5 +1,5 @@
 {
-  "defaultModel": "local-qwen",
+  "defaultModel": "local-qwen-9b",
   "models": [
     {
       "name": "local-qwen-35b",
