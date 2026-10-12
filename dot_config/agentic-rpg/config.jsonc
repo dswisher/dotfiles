@@ -18,9 +18,17 @@
       }
     },
     {
-      "name": "local-qwen-0.8b",
+      "name": "local-qwen-4b",
       "provider": "ollama",
-      "modelId": "qwen3.5:0.8b",
+      "modelId": "qwen3.5:4b",
+      "options": {
+        "endpoint": "http://localhost:11434/v1/"
+      }
+    },
+    {
+      "name": "local-qwen-2b",
+      "provider": "ollama",
+      "modelId": "qwen3.5:2b",
       "options": {
         "endpoint": "http://localhost:11434/v1/"
       }
