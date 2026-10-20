@@ -10,6 +10,14 @@
       }
     },
     {
+      "name": "local-qwen-27b",
+      "provider": "ollama",
+      "modelId": "qwen3.5:27b ",
+      "options": {
+        "endpoint": "http://localhost:11434/v1/"
+      }
+    },
+    {
       "name": "local-qwen-9b",
       "provider": "ollama",
       "modelId": "qwen3.5:9b",
