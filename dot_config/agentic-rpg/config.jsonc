@@ -42,9 +42,18 @@
       }
     },
     {
+      "name": "bedrock-opus",
+      "provider": "bedrock",
+      "modelId": "global.anthropic.claude-opus-5-5",
+      "options": {
+        "region": "us-east-1"
+      },
+      "authProfile": "bedrock"
+    },
+    {
       "name": "bedrock-sonnet",
       "provider": "bedrock",
-      "modelId": "global.anthropic.claude-sonnet-4-6",
+      "modelId": "global.anthropic.claude-sonnet-5-5",
       "options": {
         "region": "us-east-1"
       },
@@ -53,7 +62,7 @@
     {
       "name": "bedrock-haiku",
       "provider": "bedrock",
-      "modelId": "global.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "modelId": "global.anthropic.claude-haiku-5-5",
       "options": {
         "region": "us-east-1"
       },
