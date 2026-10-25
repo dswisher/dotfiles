@@ -324,10 +324,9 @@ fi
 
 
 # Fuzzy fun
-if [ -f ~/.fzf.zsh ]; then
-    source ~/.fzf.zsh
+if [ -x "$(command -v fzf)" ]; then
+    source <(fzf --zsh)
 fi
-
 
 # Set the default claude config - work config
 export CLAUDE_CONFIG_DIR=$HOME/.claude-dj
