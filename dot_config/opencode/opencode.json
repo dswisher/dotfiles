@@ -124,6 +124,10 @@
                     "SNOWFLAKE_PRIVATE_KEY_FILE": "/Users/swisherd/.ssh/snowflake-key-prod.p8"
                 },
                 "disabled": true
+            },
+            "newrelic": {
+              "type": "remote",
+              "url": "https://mcp.newrelic.com/mcp/"
             }
         }
     }
