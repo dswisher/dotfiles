@@ -127,7 +127,8 @@
             },
             "newrelic": {
               "type": "remote",
-              "url": "https://mcp.newrelic.com/mcp/"
+              "url": "https://mcp.newrelic.com/mcp/",
+              "disabled": true
             }
         }
     }
