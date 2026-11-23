@@ -14,7 +14,8 @@
         { "action": "atlassian_*", "resource": "*", "effect": "deny" },
         { "action": "atlassian_getAccessibleAtlassianResources", "resource": "*", "effect": "allow" },
         { "action": "atlassian_getJiraIssue", "resource": "*", "effect": "allow" },
-        { "action": "atlassian_searchJiraIssuesUsingJql", "resource": "*", "effect": "allow" }
+        { "action": "atlassian_searchJiraIssuesUsingJql", "resource": "*", "effect": "allow" },
+        { "action": "atlassian_addCommentToJiraIssue", "resource": "*", "effect": "ask" }
     ],
     "experimental": {
         "policies": [
