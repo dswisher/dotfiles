@@ -351,5 +351,12 @@ if [ -d $HOME/git/rnc/snowflake/rnc-snowflake-devtools ]; then
     export PATH=$PATH:$HOME/git/rnc/snowflake/rnc-snowflake-devtools/scripts
 fi
 
+# ZVM
+export ZVM_INSTALL="$HOME/.zvm/self"
+if [ -d "$ZVM_INSTALL" ]; then
+  export PATH="$PATH:$HOME/.zvm/bin"
+  export PATH="$PATH:$ZVM_INSTALL"
+fi
+
 # Tell neovim we're in a shell script
 # vim:ft=sh
