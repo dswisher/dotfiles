@@ -10,6 +10,7 @@ vim.lsp.enable('ruff')
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('sourcekit')
 vim.lsp.enable('terraform_ls')
+vim.lsp.enable('zls')
 
 -- Configure diagnostics.
 vim.diagnostic.config({
