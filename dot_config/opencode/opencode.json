@@ -15,7 +15,7 @@
         { "action": "atlassian_getAccessibleAtlassianResources", "resource": "*", "effect": "allow" },
         { "action": "atlassian_getJiraIssue", "resource": "*", "effect": "allow" },
         { "action": "atlassian_searchJiraIssuesUsingJql", "resource": "*", "effect": "allow" },
-        { "action": "atlassian_addCommentToJiraIssue", "resource": "*", "effect": "ask" }
+        { "action": "atlassian_addOrEditJiraIssueComment", "resource": "*", "effect": "ask" }
     ],
     "experimental": {
         "policies": [
@@ -57,6 +57,11 @@
                 "url": "https://vir-lookup-tracker.feedgen.dev.rnc-feeds.dowjones.io/mcp",
                 "disabled": true
             },
+            "nonprod-info-broker": {
+                "type": "remote",
+                "url": "https://vir-info-broker.feedgen.dev.rnc-feeds.dowjones.io/mcp",
+                "disabled": true
+            },
             "staging-diff-manager": {
                 "type": "remote",
                 "url": "https://vir-diff-manager.feedgen.stg.rnc-feeds.dowjones.io/mcp",
@@ -72,6 +77,11 @@
                 "url": "https://vir-lookup-tracker.feedgen.stg.rnc-feeds.dowjones.io/mcp",
                 "disabled": true
             },
+            "staging-info-broker": {
+                "type": "remote",
+                "url": "https://vir-info-broker.feedgen.stg.rnc-feeds.dowjones.io/mcp",
+                "disabled": true
+            },
             "prod-diff-manager": {
                 "type": "remote",
                 "url": "https://vir-diff-manager.feedgen.rnc-feeds.dowjones.io/mcp",
@@ -85,6 +95,11 @@
             "prod-lookup-tracker": {
                 "type": "remote",
                 "url": "https://vir-lookup-tracker.feedgen.rnc-feeds.dowjones.io/mcp",
+                "disabled": true
+            },
+            "prod-info-broker": {
+                "type": "remote",
+                "url": "https://vir-info-broker.feedgen.rnc-feeds.dowjones.io/mcp",
                 "disabled": true
             },
             "dmi": {

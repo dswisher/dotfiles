@@ -86,7 +86,7 @@ gaps.outer.right =      10
 
 on-window-detected = [
     {
-        if = 'test %{app-name} = tinkerstead',
+        if = 'test %{app-name} = Tinkerstead.Desktop',
         run = ['layout floating']
     }
 ]
