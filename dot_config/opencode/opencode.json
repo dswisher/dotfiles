@@ -137,5 +137,8 @@
               "disabled": true
             }
         }
-    }
+    },
+    "plugins": [
+      "github:martinf08/opencode-chatgpt-quota"
+    ]
 }
