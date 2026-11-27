@@ -17,16 +17,6 @@
         { "action": "atlassian_searchJiraIssuesUsingJql", "resource": "*", "effect": "allow" },
         { "action": "atlassian_addOrEditJiraIssueComment", "resource": "*", "effect": "ask" }
     ],
-    "experimental": {
-        "policies": [
-            { "action": "provider.use", "resource": "*", "effect": "deny" },
-            { "action": "provider.use", "resource": "amazon-bedrock", "effect": "allow" },
-            { "action": "provider.use", "resource": "github-copilot", "effect": "allow" },
-            { "action": "provider.use", "resource": "opencode", "effect": "allow" },
-            { "action": "provider.use", "resource": "opencode-go", "effect": "allow" },
-            { "action": "provider.use", "resource": "ollama", "effect": "allow" }
-        ]
-    },
     "lsp": {
         "go": {
             "disabled": false,
